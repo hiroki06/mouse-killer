@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "google search on the board",
   "description": "you can use google search just on the keyboard! you need not use the tiny tiny stressive mouse!",
-  "version": "0.0",
+  "version": "0.1",
   "content_scripts": [
     {
       "matches": ["<https://www.google.co.jp/search*>"],
