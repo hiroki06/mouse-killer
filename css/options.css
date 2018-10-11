@@ -1,0 +1,63 @@
+body {
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+  background: #eee;
+}
+
+#options {
+  width: 32.4rem;
+  margin: auto;
+}
+
+#options h1 {
+  font-size: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding: 1.1rem 0;
+}
+
+#options input {
+  line-height: 1.5;
+}
+
+#options input[type="text"] {
+  padding: 0.2rem;
+}
+.odd,.even{
+  border: solid 1px #aaa;
+}
+.even {
+  background: #B6BF95;
+}
+.odd {
+  background: #E1EDB9;
+}
+.url{
+  margin: 0.5rem 0 0.2rem 0.5rem;
+  width:27.4rem;
+}
+
+.command {
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #08c;
+}
+.keysets{
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 2.5rem;
+
+  /*margin-right:2rem;*/
+}
+.btns {
+  margin-top:0.2rem;
+}
+.btns button{
+  padding:0.5rem;
+  margin-left:0.2rem;
+  float: right;
+}
+.add-url {
+  background:#66CCFF;
+}
+.save {
+  background: #21FF06;
+}
