@@ -49,6 +49,8 @@
         keysets: [
           {
             id: 0,
+            forwardKeyStr: "n",
+            backwardKeyStr: "p",
             forwardKey: 78,
             backwardKey: 80,
             elmName: "#rcnt .rc .r > a:nth-of-type(1)"

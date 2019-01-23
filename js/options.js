@@ -10,6 +10,8 @@
           keysets: [
             {
               // id: 0,
+              // forwordKeyStr: "n",
+              // backwardKeyStr: "p",
               // forwardKey: 78,
               // backwardKey: 80,
               // elmName: "#rcnt .rc .r > a:nth-of-type(1)"
@@ -50,6 +52,8 @@
           url:"",
           keysets:[{
             id:0,
+            forwardKeyStr:"",
+            backwardKeyStr:"",
             forwardKey:"",
             backwardKey:"",
             elmName:""
@@ -59,6 +63,8 @@
       addItem: function (urlIndex,itemIndex) {
         this.urls[urlIndex].keysets.push({
           id:itemIndex+1,
+          forwardKeyStr: "",
+          backwardKeyStr: "",
           forwardKey:"",
           backwardKey:"",
           elmName:""
@@ -69,6 +75,15 @@
       },
       showDataToConsole: function () {
         console.dir(this.urls);
+      },
+      setKeyCode: function (urlIndex, itemIndex, keyType, event, prop) {
+        this.urls[urlIndex].keysets.forEach(hash => {
+          if (hash['id'] == itemIndex && event.key.length == 1) {
+            if(hash[`${keyType}Str`] == "" || hash[`${keyType}Str`] == event.key) {
+              hash[keyType] = event.keyCode;
+            }
+          }
+        });
       }
     },
   });

@@ -18,8 +18,8 @@
       <span class="command" @click="deleteUrl(urlIndex)">[-]</span>
       <div v-for="(setup,itemIndex) in sets.keysets">
         <p class="keysets">
-          <input type="text" v-model="setup.forwardKey" placeholder="'forward' key">
-          <input type="text" v-model="setup.backwardKey" placeholder="'backward' key.">
+          <input type="text" v-model="setup.forwardKeyStr" @keydown="setKeyCode(urlIndex,itemIndex,'forwardKey',$event)" placeholder="'forward key"　maxlength="1">
+          <input type="text" v-model="setup.backwardKeyStr" @keydown="setKeyCode(urlIndex,itemIndex,'backwardKey',$event)" placeholder="backward key" maxlength="1">
           <input type="text" v-model="setup.elmName" placeholder="(ex)'.class-name', '#example ul li' ">
           <span class="command" @click="deleteItem(urlIndex,itemIndex)">[-]</span>
           <span v-if="itemIndex == sets.keysets.length - 1" class="command" @click="addItem(urlIndex,itemIndex)">[+]</span>
