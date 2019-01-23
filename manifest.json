@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "google search on the board",
-  "description": "you can use google search just on the keyboard! you need not use the tiny tiny stressive mouse!",
+  "name": "Mouse Killer",
+"description": "you can search on google just on the keyboard! you need not use the tiny tiny stressive mouse!",
   "options_page": "options.html",
   "background": {
     "scripts": [ "./js/background.js" ],
