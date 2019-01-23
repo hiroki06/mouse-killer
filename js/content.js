@@ -29,8 +29,9 @@
   };
   const addLinkFocusEvent = () => {
     chrome.runtime.sendMessage({ method: "getLocalStorage"}, function (response) {
-      let settings = JSON.parse(response.setting);
+      let settings = initLocalStorage(JSON.parse(response.setting));
       let this_url = location.href;
+
       settings.forEach(keyBinds => {
         let reg = new RegExp(keyBinds.url);
         if( reg.test(this_url) ) {
@@ -41,5 +42,23 @@
       });
     });
   };
+  const initLocalStorage = (settings) => {
+    if(settings.length == 0){
+      let initSettings = {
+        url: "https://www.google.com/search",
+        keysets: [
+          {
+            id: 0,
+            forwardKey: 78,
+            backwardKey: 80,
+            elmName: "#rcnt .rc .r > a:nth-of-type(1)"
+          }
+        ]
+      }
+      chrome.runtime.sendMessage({ method: "setLocalStorage" });
+      return [initSettings];
+    }
+    return settings;
+  }
   addLinkFocusEvent();
 }());

@@ -6,14 +6,15 @@
     data: {
       urls: [
         {
-          url: "google",
+          url: "https://www.google.com/search",
           keysets: [
             {
-              // id: 1,
-              // forwardKey: 80,
-              // backwardKey: 12,
-              // elmName: "aaa"
-            }                    ]
+              // id: 0,
+              // forwardKey: 78,
+              // backwardKey: 80,
+              // elmName: "#rcnt .rc .r > a:nth-of-type(1)"
+            }
+          ]
         }
       ]
     },
@@ -27,7 +28,7 @@
       }
     },
     mounted: function() {
-      this.urls = JSON.parse(localStorage.getItem('setting')) || [];
+        this.urls = JSON.parse(localStorage.getItem('setting')) || [];
     },
     methods: {
       addSetting:function () {
