@@ -2,17 +2,23 @@
   "manifest_version": 2,
   "name": "google search on the board",
   "description": "you can use google search just on the keyboard! you need not use the tiny tiny stressive mouse!",
+  "options_page": "options.html",
   "background": {
-    "scripts": ["./js/background.js"]
+    "scripts": [ "./js/background.js" ],
+    "persistent": false
   },
-  "browser_action": {
-    "default_popup": "popup.html"
-  },
-  "version": "0.1",
   "content_scripts": [
     {
-      "matches": ["https://www.google.co.jp/*"],
-      "js": ["./lib/jquery-3.3.1.min.js","./js/content.js"]
-    }
-  ]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "./js/content.js","./lib/jquery-3.3.1.min.js"
+      ]
+    }],
+  "permissions": [
+    "tabs"
+  ],
+  "version": "0.1",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
