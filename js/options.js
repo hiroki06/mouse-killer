@@ -64,6 +64,9 @@
                     elmName:""
                 });
             },
+            saveItems: function() {
+                localStorage.setItem('setting', JSON.stringify(this.urls));
+            },
             showDataToConsole: function () {
                 console.dir(this.urls);
             }
